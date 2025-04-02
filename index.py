@@ -1,1 +1,1 @@
-print("chima is a boss")
+print("chima is a pal")

@@ -1,1 +1,1 @@
-print("chima is a pall")
+print("chima is a palil")

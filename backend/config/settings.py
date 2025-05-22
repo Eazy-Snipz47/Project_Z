@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    #'app.apps.RideAppConfig', # This is the app name, change when we find a proper name
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,31 @@
+Task breakdown 
+
+1. Create User & Ride models	Backend Dev 1   	Django
+2. Set up authentication & DRF	Backend Dev 2	    Django REST
+3. Build signup/login UI	Frontend Dev 1	        React
+4. Build ride request form	Frontend Dev 2	        React
+5. Connect frontend to backend	All	Axios /         fetch
+6. Test APIs	All	Postman / Thunder Client
+
+
+What we will need to do to make app functional
+
+1. Migrations: Run makemigrations and migrate to apply your model changes.
+
+2. Admin setup: Register models in admin.py to manage from Django admin.
+
+3. User registration/login API endpoints: If not done already.
+
+4. Ride request logic: Match riders with drivers, manage status updates.
+
+5. Permissions & authentication: Ensure users can only access what they should.
+
+6. Frontend state management: Ensure smooth UI interactions and feedback.
+
+7. Deployment setup: Host backend (e.g., on Render) and frontend (e.g., on Vercel or Netlify).
+
+8. Error handling & validation: Handle edge cases and form errors.
+
+9. Styling and UX: Make sure it looks and feels good to use.
+
+10. Real-time features (optional): Websockets for live driver location, ride updates, etc.

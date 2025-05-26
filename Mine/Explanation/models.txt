@@ -1,0 +1,53 @@
+Explanation of code model.py 
+
+from django.db import models
+from django.contrib.auth.models import User  #imports django's built-in user model
+
+#Ride Request model(Stores information about each ride request made in app)
+class RideRequest(models.Model):
+    rider = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ride_requests') #defines field named rider in model 
+    pickup_loctaion = models.CharField(max_length==255) 
+    dropoff_location = models.CharField(max_lenghth==255)
+    ride_time = models.DateTimeField()
+    is_completed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Ride from{self.pickup_location} to{self.dropoff_location}"
+    
+#Drive Profile Model
+class DriverProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASACADE)
+    vehicle_type = models.CharField(max_lenght=100)
+    license_plate = models.Charfield(max_length=20)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.vehicle_type}"
+    
+
+#class RideRequest(models.Model): Defines model RideRequest.Correspomds to database that stores information about each ride request made in app
+model.ForeignKey: Indictaes a one-to-many relationship with user model
+User: specifies that this foreign key relates to teh User model
+on_delete= models.CASCADE: Important for data intergrity. If a userrecord is deleted, all the RideRequest records associated with this person is deleted
+related_name='ride_requests' : Allows you tp easily access the ride requests made by a specific user for the user object
+        e.g for user Paul; I will acces their ride requests using Paul.ride_equest.all()
+pickup_location = models.CharField(max_length=255): Defines a field name "pickup_location" to store the starting location of the ride
+models.CharField: Indicates thsi field wil store a string of text
+max_length=255: Sets the max length of teh string that can be stoed in teh database
+dropoff_location = models.CharField(max_lenght=255): stores destination of the ride
+Ride_time = models.DateTimeFiedl(): Dfeines field to store the date and time when a rode was requested
+    models.DateTimeField: Used to store the date and time information
+is_completed = models.BooleanField(default= False): This field will store whwther the ride has been completed or not.
+    model.BooleanField: Store True or False
+    defaul= False: sets the default value to false when a new ride is requested
+def __str __(self): return f"Ride from {self.pickup_location} to{self.dropoff_location}": A special method in python classes
+    when a str() on a RideRequest object(when printed in code or django admin), this method will turn a human-readable string representing the ride request
+
+#Class DriverProfile(models.Model): Defines the driver model. Stores information specific to drivers
+User = models.OntoOneFieLd(User, on_delete=models.CASCADE): Defines a one to one relationship with the User model. Each driver will be assigned to one user and can have atmost one DriverProfile
+    On_delete=models.CASCADE: If a user record is deleted, the associated DriverProfile will also be deleted
+Vehicle_type= models.CharField(max_length= 20): Stores the type of vehicle the driver uses
+License_plate = models.harField(max_lenght= 20): Stores vehicle license plate number
+def __str__(self): return f"{sefl.user.username} - {self.vehicle_type}" : provides a human readable representation of a DriverProfile object 
+
+#Location model(models.Model): Defines location model 
+User = models.ForeignKey(User, on_delete= models.CASCADE, related_name= 'location'): Defines field name location in model, connecting locations and users

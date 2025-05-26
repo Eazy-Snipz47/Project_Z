@@ -1,10 +1,5 @@
 Task breakdown 
-SuperUser created succesfully, login credentials
-Username : Project_z
-Email address: lesliekcee@gmail.com 
-password: Widener2025
 
-Django admin URL : http://127.0.0.1:8000/admin/
 
 1. Create User & Ride models	Backend Dev 1   	Django
 2. Set up authentication & DRF	Backend Dev 2	    Django REST
@@ -35,3 +30,14 @@ What we will need to do to make app functional
 9. Styling and UX: Make sure it looks and feels good to use.
 
 10. Real-time features (optional): Websockets for live driver location, ride updates, etc.
+
+
+SuperUser created succesfully, login credentials
+Username : Project_z
+Email address: lesliekcee@gmail.com 
+password: Widener2025
+Django admin URL : http://127.0.0.1:8000/admin/
+
+Before You log in Do:
+
+Run server in vsc terminal   ; python manage.py runserver
